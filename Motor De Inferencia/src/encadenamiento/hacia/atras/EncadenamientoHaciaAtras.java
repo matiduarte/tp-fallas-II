@@ -1,7 +1,6 @@
 package encadenamiento.hacia.atras;
 
 import java.util.*;
-import java.io.*;
 
 // to run simply do a: new BC(ask,tell) and then bc.execute()
 // ask is a propositional symbol

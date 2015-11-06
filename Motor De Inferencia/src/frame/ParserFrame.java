@@ -54,12 +54,12 @@ public class ParserFrame {
 				String[] slot = s.split("=");
 				if (slot[1].contains(",")){
 					String[] vv = slot[1].split(", ");
-					for (String slotValue : vv){
+					for (String slotValue : vv)
 						slotValues.add(slotValue);
-					}
-					this.frame.addData(slot[0], slotValues);
+				} else {
+					slotValues.add(slot[1]);
 				}
-				
+				this.frame.addData(slot[0], slotValues);
 			}
 		}
 		

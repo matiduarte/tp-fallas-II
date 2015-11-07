@@ -3,13 +3,16 @@ import java.io.FileNotFoundException;
 
 
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import frame.Frame;
 import frame.ParserFrame;
 
 
 public class EjemploDeUso{
 
-public static void main(String [ ] args){
+public static void main(String [ ] args) throws IOException{
 	
 	/*EncadenamientoHaciaAtras encaAtras = 
 			new EncadenamientoHaciaAtras("r", "p=>q;q=>r;p;q");
@@ -22,13 +25,17 @@ public static void main(String [ ] args){
 	
 	ParserFrame parser = null;
 	try {
-		parser = new ParserFrame("ejemplo.yml");
+		parser = new ParserFrame("../ArhcivosFrames/");
+		
 	} catch (FileNotFoundException e) {
 		e.printStackTrace();
 	}
 	
-	Frame frame = parser.createFrame();
-	frame.print();
+	ArrayList<Frame> listOfFrame = parser.loadFrames();
+	for (Frame f: listOfFrame){
+		f.print();
+		System.out.println("---");
+	}
 	
 }
 

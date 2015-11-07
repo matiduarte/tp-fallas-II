@@ -1,0 +1,7 @@
+name: Distribucion 1
+parent: Distribucion
+data:
+  - Lugar: Posadas
+  - Fecha: 03/03/1990
+  - Tiempo: Soleado
+  - Participantes: Matias, Pepe

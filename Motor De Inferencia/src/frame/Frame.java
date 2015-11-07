@@ -8,12 +8,12 @@ public class Frame {
 
 	private String name;
 	private String parent;
-	private HashMap<String, ArrayList<String>> frame;
+	private HashMap<String, ArrayList<String>> data;
 	
 	public Frame(String name){
 		this.parent = "";
 		this.name = name;
-		this.frame = new HashMap<String,  ArrayList<String>>();
+		this.data = new HashMap<String,  ArrayList<String>>();
 	}
 	
 	public String getName() {
@@ -33,7 +33,7 @@ public class Frame {
 	}
 	
 	public void addData(String key, ArrayList<String> value){
-		this.frame.put(key, value);
+		this.data.put(key, value);
 	}
 	
 	public void print(){
@@ -42,13 +42,13 @@ public class Frame {
 		if (!this.parent.equals(""))
 			System.out.print("parent: " + this.getParent() + '\n');
 		System.out.print("data: " + '\n');
-		for(Entry<String, ArrayList<String>> e : this.frame.entrySet()) {
+		for(Entry<String, ArrayList<String>> e : this.data.entrySet()) {
 	    	   System.out.println("\t-" + e.getKey() + ": " + e.getValue().toString());
 	    }
 	}
 
-	public HashMap<String,  ArrayList<String>> getFrame() {
-		return this.frame;
+	public HashMap<String,  ArrayList<String>> getData() {
+		return this.data;
 	}
 
 }

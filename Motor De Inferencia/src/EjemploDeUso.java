@@ -31,10 +31,26 @@ public static void main(String [ ] args) throws IOException{
 		e.printStackTrace();
 	}
 	
+	
+	
+	
+	
+	
 	ArrayList<Frame> listOfFrame = parser.loadFrames();
 	for (Frame f: listOfFrame){
 		f.print();
-		System.out.println("---");
+	}
+	
+	String name = "Distribucion";
+	String slot = "Participantes";
+	String slotValue = "Roberto";
+	
+	for (Frame f: listOfFrame){
+		f.setData(name ,slot, slotValue);
+	}
+	
+	for (Frame f: listOfFrame){
+		f.print();
 	}
 	
 }

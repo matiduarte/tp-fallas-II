@@ -3,11 +3,7 @@ package frame;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -16,13 +12,11 @@ import org.yaml.snakeyaml.Yaml;
 
 public class ParserFrame {
 
-	private String path;
 	private Frame frame;
 	private File folder;
 	
 	public ParserFrame(String path) throws FileNotFoundException{
 		
-		this.path = path;
 		this.folder = new File(path);
 	}
 	
@@ -52,10 +46,10 @@ public class ParserFrame {
 		
 		ArrayList<Object> listOfObjects = this.ReadFiles();
 		ArrayList<Frame> listOfFrames = new ArrayList<Frame>();
-		for (Object o : listOfObjects){
+		for (Object object : listOfObjects){
 			
 			HashMap<String,ArrayList<String>> frameAux = 
-			(HashMap<String, ArrayList<String>>) o;
+			(HashMap<String, ArrayList<String>>) object;
 			ArrayList<String> data = new ArrayList<String>();
 		
 			for(Entry<String, ArrayList<String>> e : frameAux.entrySet()) {

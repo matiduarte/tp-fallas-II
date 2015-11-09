@@ -50,5 +50,30 @@ public class Frame {
 	public HashMap<String,  ArrayList<String>> getData() {
 		return this.data;
 	}
+	
+	public boolean hasParent(){
+		return (!this.parent.isEmpty());
+	}
+	
+	/**
+	 * 
+	 * @param name: nombre del frame.
+	 * @param slot: nombre del atributo a modificar.
+	 * @param slotValue: valor del atributo a modificar.
+	 * @return true si se modifico, false en otro caso.
+	 */
+	public void setData(String name, String slot, String slotValue){
+		
+		if (this.name.equals(name)){	
+			for(Entry<String, ArrayList<String>> e : this.data.entrySet()) {
+				if (e.getKey().equals(slot)){
+					ArrayList<String> listOfValues = e.getValue();
+					listOfValues.add(slotValue);
+				}
+			}
+		}
+	}
+
+	
 
 }
